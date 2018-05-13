@@ -25,3 +25,12 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Documentation
+
+Documentation is auto-generated and served on [http://127.0.0.1:8080](http://127.0.0.1:8080) running `npm run doc`
+
+# Modules (lazy loaded)
+- **App**: bootstrap application (root: _LayoutComponent_)
+- **Core**: contains core features
+- **Profile**: contains basic info about estate agent 
