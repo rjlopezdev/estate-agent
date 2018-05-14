@@ -8,7 +8,11 @@ import { RouterOutlet } from '@angular/router';
 })
 export class LayoutComponent implements OnInit {
 
-  constructor() { }
+  public currentYear : Date;
+
+  constructor() { 
+    this.currentYear = new Date();
+  }
 
   ngOnInit() {
   }
