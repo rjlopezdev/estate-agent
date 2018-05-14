@@ -1,0 +1,67 @@
+<!-- HEADING -->
+<h1 class="uk-heading-primary uk-text-center"> Activos </h1>
+<hr>
+
+<!-- ACTIVE TABLE -->
+<div class="uk-overflow-auto">
+  <table class="uk-table uk-table-hover uk-table-middle uk-table-divider">
+    <!-- HEADER -->
+    <thead>
+      <tr>
+          <th class="uk-table-shrink"> </th>
+          <th class="uk-table-expand"> Name </th>
+          <th class="uk-table-expand"> Description </th>
+          <th class="uk-width-small"> Active </th>
+          <th class="uk-width-small"> Detail </th>
+      </tr>
+    </thead>
+    <!-- BODY -->
+    <tbody>
+      <!-- ACTIVE ITEM -->
+      <tr>
+        <td> <input class="uk-checkbox" type="checkbox"> </td>
+        <td> Piso Tomatino </td>
+        <td> Un piso muy bonito en una zona preciosa, mola mucho loco! </td>
+        <td>
+          <span uk-icon="check"> Disponible </span> 
+          <div uk-dropdown>
+            <ul class="uk-nav uk-dropdown-nav">
+              <li class="uk-active"><a href="#">Dar de baja </a></li>
+            </ul>
+          </div>
+        </td>
+        <td>
+            <button class="uk-button uk-button-link"> Ver </button>
+        </td>
+      </tr>
+      <tr>
+        <td> <input class="uk-checkbox" type="checkbox"> </td>
+        <td> Piso Tomatino </td>
+        <td> Un piso muy bonito en una zona preciosa, mola mucho loco! </td>
+        <td>
+          <span uk-icon="check"> Disponible </span> 
+          <div uk-dropdown>
+            <ul class="uk-nav uk-dropdown-nav">
+              <li class="uk-active"><a href="#">Dar de baja </a></li>
+            </ul>
+          </div>
+        </td>
+        <td>
+            <button class="uk-button uk-button-link"> Ver </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- PAGINATION -->
+<ul class="uk-pagination uk-flex-right uk-margin-medium-top" uk-margin>
+    <li><a href="#"><span uk-pagination-previous></span></a></li>
+    <li><a href="#">1</a></li>
+    <li class="uk-disabled"><span>...</span></li>
+    <li><a href="#">5</a></li>
+    <li><a href="#">6</a></li>
+    <li class="uk-active"><span>7</span></li>
+    <li><a href="#">8</a></li>
+    <li><a href="#"><span uk-pagination-next></span></a></li>
+</ul>
