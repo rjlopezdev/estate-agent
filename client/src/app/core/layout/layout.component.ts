@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-layout',
@@ -8,11 +9,7 @@ import { RouterOutlet } from '@angular/router';
 })
 export class LayoutComponent implements OnInit {
 
-  public currentYear : Date;
-
-  constructor() { 
-    this.currentYear = new Date();
-  }
+  constructor() { }
 
   ngOnInit() {
   }
