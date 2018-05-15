@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 
 Route::resource('active', 'ActiveController');
+Route::resource('client-request', 'ClientRequestController');
