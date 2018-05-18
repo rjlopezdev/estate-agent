@@ -4,23 +4,24 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateActiveTable extends Migration
+class CreateActivesTable extends Migration
 {
     /**
      * Run the migrations.
+     * @table actives
      *
      * @return void
      */
     public function up()
     {
-        Schema::create('active', function (Blueprint $table) {
+        Schema::create('actives', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
-
-            $table->char('name', 100);
-            $table->text('address');
-            $table->text('description');
+            $table->string('address', 45)->nullable();
             $table->boolean('available');
+            $table->longText('description')->nullable();
+            $table->integer('area')->nullable();
+            $table->enum('type', ['Local', 'Flat']);
+            # Indexes
         });
     }
 
@@ -31,6 +32,6 @@ class CreateActiveTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('active');
+        Schema::drop('actives');
     }
 }

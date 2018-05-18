@@ -8,6 +8,7 @@ class CreateImagesTable extends Migration
 {
     /**
      * Run the migrations.
+     * @table images
      *
      * @return void
      */
@@ -15,9 +16,16 @@ class CreateImagesTable extends Migration
     {
         Schema::create('images', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+            $table->string('path', 45)->nullable();
+            $table->integer('active_id')->unsigned();
+            # Indexes
+            $table->index('active_id');
 
-            $table->string('path', 100);
+
+            $table->foreign('active_id')
+                ->references('id')->on('actives')
+                ->onDelete('no action')
+                ->onUpdate('no action');
         });
     }
 
@@ -28,6 +36,6 @@ class CreateImagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('images');
+        Schema::drop('images');
     }
 }

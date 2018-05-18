@@ -4,20 +4,20 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateActiveTagTable extends Migration
+class CreateActiveTagsTable extends Migration
 {
     /**
      * Run the migrations.
+     * @table active_tags
      *
      * @return void
      */
     public function up()
     {
-        Schema::create('active_tag', function (Blueprint $table) {
+        Schema::create('active_tags', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
-
-            $table->char('name', 30);
+            $table->string('name', 30);
+            # Indexes
         });
     }
 
@@ -28,6 +28,6 @@ class CreateActiveTagTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('active_tag');
+        Schema::drop('active_tags');
     }
 }
