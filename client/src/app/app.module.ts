@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { appRoutes } from './app.routes';
 import { CoreModule } from './core/core.module';
 import { LayoutComponent } from './core/layout/layout.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { LayoutComponent } from './core/layout/layout.component';
   imports: [
     BrowserModule,
     CoreModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],
