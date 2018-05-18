@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class ClientRequest extends Model
 {
     //
-    protected $table = 'client_request';
+    protected $table = 'client_requests';
 }
