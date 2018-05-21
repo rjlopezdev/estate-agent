@@ -9,6 +9,7 @@
     <thead>
       <tr>
           <th class="uk-table-shrink"> </th>
+          <th class="uk-table-shrink"> </th>
           <th class="uk-table-expand"> Name </th>
           <th class="uk-table-expand"> Description </th>
           <th class="uk-width-small"> Active </th>
@@ -18,28 +19,18 @@
     <!-- BODY -->
     <tbody>
       <!-- ACTIVE ITEM -->
-      <tr>
+      <tr *ngFor="let active of actives">
         <td> <input class="uk-checkbox" type="checkbox"> </td>
-        <td> Piso Tomatino </td>
-        <td> Un piso muy bonito en una zona preciosa, mola mucho loco! </td>
         <td>
-          <span uk-icon="check"> Disponible </span> 
-          <div uk-dropdown>
-            <ul class="uk-nav uk-dropdown-nav">
-              <li class="uk-active"><a href="#">Dar de baja </a></li>
-            </ul>
-          </div>
+          <img class="uk-preserve-width uk-border-circle" [src]="active.images[0].path
+            ? active.images[0].path 
+            : assets/images/no-image.jpg" width="80" height="80" alt="">
         </td>
+        <td> {{ active.address }} </td>
+        <td> {{ active.description }} </td>
         <td>
-            <button class="uk-button uk-button-link"> Ver </button>
-        </td>
-      </tr>
-      <tr>
-        <td> <input class="uk-checkbox" type="checkbox"> </td>
-        <td> Piso Tomatino </td>
-        <td> Un piso muy bonito en una zona preciosa, mola mucho loco! </td>
-        <td>
-          <span uk-icon="check"> Disponible </span> 
+          <span *ngIf="active.available" uk-icon="check"> Disponible </span>
+          <span *ngIf="!active.available" uk-icon="close"> Ocupado </span> 
           <div uk-dropdown>
             <ul class="uk-nav uk-dropdown-nav">
               <li class="uk-active"><a href="#">Dar de baja </a></li>

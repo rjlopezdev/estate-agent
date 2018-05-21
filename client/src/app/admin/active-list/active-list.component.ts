@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActiveService } from '../../core/services/active.service';
+import { Active } from '../../core/interfaces/active';
 
 @Component({
   selector: 'app-active-list',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActiveListComponent implements OnInit {
 
-  constructor() { }
+  public actives: Active;
+
+  constructor(private activeService: ActiveService) { }
 
   ngOnInit() {
+    this.activeService.getActives()
+      .subscribe(actives => this.actives = actives);
   }
 
 }
