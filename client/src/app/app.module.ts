@@ -6,6 +6,7 @@ import { appRoutes } from './app.routes';
 import { CoreModule } from './core/core.module';
 import { LayoutComponent } from './core/layout/layout.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [Location, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [LayoutComponent]
 })
 export class AppModule { }
