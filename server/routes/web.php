@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return \File::get(base_path() . '/public/app/index.html');
 });
 
 Route::resource('active', 'ActiveController');

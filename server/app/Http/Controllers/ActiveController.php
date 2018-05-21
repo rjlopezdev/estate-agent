@@ -14,7 +14,7 @@ class ActiveController extends Controller
      */
     public function index()
     {
-        return Active::all();
+        return Active::with('tags', 'images')->get();
     }
 
     /**
