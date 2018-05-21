@@ -16,6 +16,7 @@ class CreateActiveTagsTable extends Migration
     {
         Schema::create('active_tags', function (Blueprint $table) {
             $table->increments('id');
+            $table->timestamps();
             $table->string('name', 30);
             # Indexes
         });

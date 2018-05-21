@@ -17,6 +17,8 @@ class CreateActivesActiveTagsTable extends Migration
         Schema::create('actives__active_tags', function (Blueprint $table) {
             $table->integer('active_id')->unsigned();
             $table->integer('active_tag_id')->unsigned();
+            $table->timestamps();
+            
             # Indexes
             $table->index('active_tag_id');
             $table->index('active_id');

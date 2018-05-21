@@ -16,6 +16,8 @@ class CreateClientRequestsTable extends Migration
     {
         Schema::create('client_requests', function (Blueprint $table) {
             $table->integer('id');
+            $table->timestamps();
+            
             $table->string('name', 20);
             $table->string('surname', 45);
             $table->string('phone_number', 15);

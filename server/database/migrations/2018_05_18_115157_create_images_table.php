@@ -16,7 +16,10 @@ class CreateImagesTable extends Migration
     {
         Schema::create('images', function (Blueprint $table) {
             $table->increments('id');
+            $table->timestamps();
+            
             $table->string('path', 45)->nullable();
+            $table->boolean('is_main');
             $table->integer('active_id')->unsigned();
             # Indexes
             $table->index('active_id');

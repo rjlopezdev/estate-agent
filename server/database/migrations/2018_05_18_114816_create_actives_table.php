@@ -16,6 +16,8 @@ class CreateActivesTable extends Migration
     {
         Schema::create('actives', function (Blueprint $table) {
             $table->increments('id');
+            $table->timestamps();
+            
             $table->string('address', 45)->nullable();
             $table->boolean('available');
             $table->longText('description')->nullable();
