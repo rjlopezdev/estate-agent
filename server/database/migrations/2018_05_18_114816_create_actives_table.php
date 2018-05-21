@@ -18,7 +18,7 @@ class CreateActivesTable extends Migration
             $table->increments('id');
             $table->timestamps();
             
-            $table->string('address', 45)->nullable();
+            $table->string('address', 100)->nullable();
             $table->boolean('available');
             $table->longText('description')->nullable();
             $table->integer('area')->nullable();

@@ -20,7 +20,7 @@ class CreateImagesTable extends Migration
             
             $table->string('path', 45)->nullable();
             $table->boolean('is_main');
-            $table->integer('active_id')->unsigned();
+            $table->integer('active_id')->unsigned()->default(0);
             # Indexes
             $table->index('active_id');
 
