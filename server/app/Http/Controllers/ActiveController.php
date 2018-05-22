@@ -14,7 +14,9 @@ class ActiveController extends Controller
      */
     public function index()
     {
-        return Active::with('tags', 'images')->get();
+        return Active::orderBy('address', 'desc')
+                ->with('tags', 'images')
+                ->paginate(10);
     }
 
     /**
