@@ -1,6 +1,9 @@
 <!-- HEADING -->
-<h1 class="uk-heading-primary uk-text-center"> Activos </h1>
+<h1 class="uk-heading-primary uk-text-center"> Inmuebles </h1>
 <hr>
+
+<!-- PAGINATION -->
+<app-simple-pagination [resource]="'active'" (page)="setPage($event)"></app-simple-pagination>
 
 <!-- ACTIVE TABLE -->
 <div class="uk-overflow-auto">
@@ -10,10 +13,10 @@
       <tr>
           <th class="uk-table-shrink"> </th>
           <th class="uk-table-shrink"> </th>
-          <th class="uk-table-expand"> Name </th>
-          <th class="uk-table-expand"> Description </th>
-          <th class="uk-width-small"> Active </th>
-          <th class="uk-width-small"> Detail </th>
+          <th class="uk-table-expand"> Nombre </th>
+          <th class="uk-table-expand uk-visible@m"> Descripción </th>
+          <th class="uk-width-expand"> Estado </th>
+          <th class="uk-width-expand"> Detalle </th>
       </tr>
     </thead>
     <!-- BODY -->
@@ -21,23 +24,48 @@
       <!-- ACTIVE ITEM -->
       <tr *ngFor="let active of actives">
         <td> <input class="uk-checkbox" type="checkbox"> </td>
+
         <td>
           <img class="uk-preserve-width uk-border-circle" [src]="active.images[0].path
             ? active.images[0].path 
             : assets/images/no-image.jpg" width="80" height="80" alt="">
         </td>
+
         <td> {{ active.address }} </td>
-        <td> {{ active.description }} </td>
-        <td>
-          <span *ngIf="active.available" uk-icon="check"> Disponible </span>
-          <span *ngIf="!active.available" uk-icon="close"> Ocupado </span> 
+
+        <td class="uk-visible@m"> {{ active.description }} </td>
+
+        <td class="uk-text-center">
+
+          <div *ngIf="active.available">
+            <p class="uk-display-inline-block uk-visible@m uk-text-success"> Disponible </p>
+            <span class="uk-display-inline-block uk-hidden@m uk-text-success" uk-icon="check"> </span>
+          </div>
+
+          <div *ngIf="!active.available">
+            <p class="uk-display-inline-block uk-visible@m uk-text-danger"> Ocupado </p>
+            <span class="uk-display-inline-block uk-hidden@m uk-text-danger" uk-icon="close"> </span> 
+          </div>
+
           <div uk-dropdown>
             <ul class="uk-nav uk-dropdown-nav">
-              <li class="uk-active"><a href="#">Dar de baja </a></li>
+              <li class="uk-active">
+                <a><span class="uk-text-primary" [attr.uk-icon]="active.available ? 'triangle-down' : 'triangle-up'"> {{ active.available ? 'Dar de baja' : 'Dar de alta'}} </span> </a>
+              </li>
+              <br>
+              <li class="uk-active">
+                  <a><span class="uk-text-danger" uk-icon="close"> Eliminar </span></a>
+              </li>
+              <br>
+              <li class="uk-active">
+                  <a><span class="uk-text-primary" uk-icon="pencil"> Editar </span></a>
+              </li>
             </ul>
           </div>
+
         </td>
-        <td>
+
+        <td class="uk-text-right">
             <button class="uk-button uk-button-link"> Ver </button>
         </td>
       </tr>
@@ -45,14 +73,4 @@
   </table>
 </div>
 
-<!-- PAGINATION -->
-<ul class="uk-pagination uk-flex-right uk-margin-medium-top" uk-margin>
-    <li><a href="#"><span uk-pagination-previous></span></a></li>
-    <li><a href="#">1</a></li>
-    <li class="uk-disabled"><span>...</span></li>
-    <li><a href="#">5</a></li>
-    <li><a href="#">6</a></li>
-    <li class="uk-active"><span>7</span></li>
-    <li><a href="#">8</a></li>
-    <li><a href="#"><span uk-pagination-next></span></a></li>
-</ul>
+<hr class="uk-divider-icon">
