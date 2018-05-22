@@ -1,0 +1,15 @@
+<!-- PAGINATION -->
+<h6 class="uk-text-center uk-text-muted"> Página {{ currentPage }} de {{ lastPage }} </h6>
+<ul class="uk-pagination">
+  <li (click)="previous()" *ngIf="previousPage">
+    <a>
+      <span class="uk-margin-small-right" uk-pagination-previous></span>
+      Previous {{ previousPage }}
+    </a>
+  </li>
+  <li (click)="next()" *ngIf="currentPage != lastPage" class="uk-margin-auto-left">
+    <a> Next {{ nextPage }} 
+      <span class="uk-margin-small-left" uk-pagination-next></span>
+    </a>
+  </li>
+</ul>
