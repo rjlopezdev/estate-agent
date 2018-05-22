@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ActiveService } from '../../core/services/active.service';
 import { Active } from '../../core/interfaces/active';
 import { SimplePaginationComponent } from '../../core/simple-pagination/simple-pagination.component';
 
