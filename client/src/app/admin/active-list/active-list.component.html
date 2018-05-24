@@ -1,5 +1,5 @@
 <!-- HEADING -->
-<h1 class="uk-heading-primary uk-text-center"> Inmuebles </h1>
+<h1 class="uk-heading-primary uk-text-center uk-text-uppercase"> Inmuebles </h1>
 <hr>
 
 <!-- PAGINATION -->
@@ -13,10 +13,11 @@
       <tr>
           <th class="uk-table-shrink"> </th>
           <th class="uk-table-shrink"> </th>
-          <th class="uk-table-expand"> Nombre </th>
+          <th class="uk-table-expand"> Dirección </th>
           <th class="uk-table-expand uk-visible@m"> Descripción </th>
+          <th class="uk-table-expand uk-visible@m"> Precio </th>
           <th class="uk-width-expand"> Estado </th>
-          <th class="uk-width-expand"> Detalle </th>
+          <th class="uk-width-expand"> </th>
       </tr>
     </thead>
     <!-- BODY -->
@@ -34,6 +35,10 @@
         <td> {{ active.address }} </td>
 
         <td class="uk-visible@m"> {{ active.description }} </td>
+
+        <td class="uk-visible@m">
+            <span class="uk-label uk-text-bold"> {{ active.price | currency : 'EUR' }} </span>
+        </td>
 
         <td class="uk-text-center">
 
@@ -72,5 +77,3 @@
     </tbody>
   </table>
 </div>
-
-<hr class="uk-divider-icon">

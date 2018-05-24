@@ -6,5 +6,6 @@ export interface Active {
     address: string;
     description: string;
     available: boolean;
+    price: number;
     images: Image[];
 }

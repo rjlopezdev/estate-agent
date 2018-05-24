@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LoginComponent } from './login/login.component';
 import { RouterModule } from '@angular/router';
 import { adminRoutes } from './admin.routes';
 import { ActiveListComponent } from './active-list/active-list.component';
@@ -14,7 +13,7 @@ import { CoreModule } from '../core/core.module';
     CoreModule,
     RouterModule.forChild(adminRoutes)
   ],
-  declarations: [LoginComponent, ActiveListComponent, ActiveDetailComponent],
+  declarations: [ActiveListComponent, ActiveDetailComponent],
   providers: [SimplePaginationService]
 })
 export class AdminModule { }
