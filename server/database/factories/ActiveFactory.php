@@ -8,6 +8,7 @@ $factory->define(App\Active::class, function (Faker $faker) {
         'available' => rand(0, 1),
         'description' => $faker->paragraph,
         'area' => rand(20, 5000),
+        'price' => rand(50, 10000),
         'type' => $faker->randomElement(['Local' ,'Flat']),
     ];
 });

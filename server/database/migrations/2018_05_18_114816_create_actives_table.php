@@ -22,6 +22,7 @@ class CreateActivesTable extends Migration
             $table->boolean('available');
             $table->longText('description')->nullable();
             $table->integer('area')->nullable();
+            $table->integer('price')->unsigned();
             $table->enum('type', ['Local', 'Flat']);
             # Indexes
         });
