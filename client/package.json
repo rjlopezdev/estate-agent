@@ -9,8 +9,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "doc": "./node_modules/.bin/compodoc -p src/tsconfig.app.json && ./node_modules/.bin/compodoc src -s",
-    "dev-build" : "./node_modules/@angular/cli/bin/ng build --no-delete-output-path --watch",
-    "dev-prod" : "./node_modules/@angular/cli/bin/ng build --prod --no-delete-output-path"
+    "dev-build": "ng build --no-delete-output-path --watch",
+    "dev-prod": "ng build --prod --no-delete-output-path"
   },
   "private": true,
   "dependencies": {
