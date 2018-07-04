@@ -15,5 +15,6 @@ Route::get('/', function () {
     return \File::get(base_path() . '\public\index.html');
 });
 
+
 Route::resource('active', 'ActiveController');
 Route::resource('client-request', 'ClientRequestController');
